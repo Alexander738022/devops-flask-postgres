@@ -11,7 +11,6 @@ permissions:
 
 env:
   IMAGE_TAG: 2.0.0
-  GHCR_USERNAME: alexander738022
 
 jobs:
   build:
@@ -33,11 +32,11 @@ jobs:
       - name: Construir Imagen
         run: |
           docker build \
-          -t ghcr.io/${{ env.GHCR_USERNAME }}/devops-flask-postgres:${{ env.IMAGE_TAG }} \
-          -t ghcr.io/${{ env.GHCR_USERNAME }}/devops-flask-postgres:latest \
+          -t ghcr.io/alexander738022/devops-flask-postgres:${{ env.IMAGE_TAG }} \
+          -t ghcr.io/alexander738022/devops-flask-postgres:latest \
           .
 
       - name: Publicar Imagen
         run: |
-          docker push ghcr.io/${{ env.GHCR_USERNAME }}/devops-flask-postgres:${{ env.IMAGE_TAG }}
-          docker push ghcr.io/${{ env.GHCR_USERNAME }}/devops-flask-postgres:latest
+          docker push ghcr.io/alexander738022/devops-flask-postgres:${{ env.IMAGE_TAG }}
+          docker push ghcr.io/alexander738022/devops-flask-postgres:latest
